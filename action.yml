@@ -1,0 +1,40 @@
+name: 'SPDX Merge'
+author: 'Philips'
+description: 'Merge one or more SBOMs into one parent SBOM'
+inputs:
+  docpath:
+    description: 'The path to the folder that contains the files to be merged'
+    mandatory: true
+  name:
+    description: "Name of product for which SBoM is created"
+    mandatory: true
+  mergetype:
+    description: "Type of merge: 0 for shallow merge, 1 for deep merge"
+    mandatory: false
+    default: "1"
+  author:
+    description: "SBoM Author name"
+    mandatory: false
+  email:
+    description: "SBoM Author email address"
+    mandatory: false
+  docnamespace:
+    description: "Document namespace; URL where document is stored or organzation URL"
+    default: "https://spdx.organization.name"
+  filetype:
+    description: "Resulting merge file format: J for JSON, T for SPDX tag value format"
+    default: "J"
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  env:
+    DOCPATH: ${{ inputs.docpath }}
+    NAME: ${{ inputs.name }}
+    MERGETYPE: ${{ inputs.mergetype }}
+    AUTHOR: ${{ inputs.author }}
+    EMAIL: ${{ inputs.email }}
+    DOCNAMESPACE: ${{ inputs.docnamespace }}
+    FILETYPE: ${{ inputs.filetype }}
+branding:
+  icon: 'book'  
+  color: 'blue'

@@ -1,0 +1,25 @@
+[MASTER]
+
+
+disable=line-too-long,invalid-name,protected-access,fixme,too-many-branches,
+        attribute-defined-outside-init,too-many-locals,
+        too-many-arguments,too-many-statements,
+        too-many-return-statements,too-few-public-methods,
+        import-error,too-many-lines,too-many-instance-attributes,
+        too-many-public-methods,duplicate-code,broad-except,
+        redefined-builtin,missing-docstring,no-member
+
+[REPORTS]
+
+# Set the output format. Available formats are text, parseable, colorized, msvs
+# (visual studio) and html. You can also give a reporter class, eg
+# mypackage.mymodule.MyReporterClass.
+output-format=colorized
+
+[FORMAT]
+
+# Maximum number of characters on a single line.
+max-line-length=120
+
+[TYPECHECK]
+signature-mutators=click.decorators.option

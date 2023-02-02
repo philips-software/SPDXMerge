@@ -1,39 +1,52 @@
-# Tool for merging SPDX files 
-This tool provides option to merge multiple SPDX file by taking SPDX files folder path as input. 
+# Tool for merging SPDX files
 
-# Features
-* Merge multiple SPDX files 
-* Can merge by copying all package in single file (Deep Merge Option)
-* Can merge by creating external referances (Shallow Merge Option)
+This tool integrates multiple SPDX JSON formatted Software Bill of materials (SBOMs) into a parent SBOM, either by consolidating all the contents into a single file or by creating references to multiple files.
+The tool works with SPDX 2.2 and SPDX 2.3 version.
 
-# Installation
-This tool needs SPDX Tools library to be installed, It is recommened to create virtual environment to install this tool. 
-Follow below steps 
-1. Create virtual environment 
-```
-  python -m venv ./venv
-```
-2. Go to virtual environment path  ( in case of Windows venv\Scripts)
-```
-  cd venv\bin
-```
-3. Install it from PyPI with in virtual environment created 
-```
-  pip install spdx-tools 
-```
+## Features
 
+Combine multiple SPDX JSON/Tag value files into a single parent Software Bill of Materials (SBOM) in one of two ways.
 
-# How to use 
-* For Deep Merge 
-```
-    SPDXMerge --docpath <SPDX input folder path> --type 0 --author <Mention Organization or Author> --docnamespace <namespace for spdx doc> --name <product name>
+- Deep Merge - Combines the contents of all SBOM files into a single comprehensive parent file, incorporating all the information about the package dependencies and their relationships.
+- Shallow Merge - Generates a parent SBOM that references multiple SBOM files in the 'externalDocumentRefs' section.
+
+## How to use
+
+### Manual Installation
+
+SPDX Tools(spdx-tools) needs to be installed as a pre-requisite for this application to work. It is listed in the requirement.txt file.
+Just run the below command to install all the requirements that needs to be installed.
+
+```shell
+pip install -r requirements.txt
 ```
 
-* For Shallow Merge 
-```
-    SPDXMerge --docpath <SPDX input folder path> --type 1 --author <Mention Organization or Author> --docnamespace <namespace for spdx doc> --name <product name>'
+Execute the command with the required inputs.
+  
+```shell
+    SPDXMerge --docpath <folder path of the SBOMs to be merged> --name <product name> --mergetype <0 for deep merge/1 for shallow merge --author <organization or author name> 
+              --email <org/ author email> --docnamespace <namespace for spdx doc> --filetype <expected SBOM file format for JSON/T for Tag value>
 ```
 
-# TODOs
-* In case of deep merge -  removal of duplicates 
-* Option for Organization, Author tag in documentcreation
+### GitHub action
+
+```yml
+  - name: Checkout project
+    uses: actions/checkout@v3
+  - name: Run SPDX Merge tool to merge spdx files 
+    uses: philips-software/SPDXMerge@v0.1
+    with:
+      docpath: ${{github.workspace}}/Test # path with spdx files in json
+      name: sample-sbom                   # name project
+      mergetype: 1                        # 0 shallow merge, 1 deep merge defaults 1
+      author: "Kung Fury"                 # Author
+      email: "kfury@example.com"          # email - optional
+      filetype: J                         # expected SBOM format JSON/ tag value format , defaults to J
+      docnamespace: "https://mycompany.example.com"
+  - name: Check result
+    run: cat merged-SBoM.json
+```
+
+## TODOs
+
+- Option for Organization, Author tag in document creation

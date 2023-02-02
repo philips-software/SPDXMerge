@@ -1,0 +1,1 @@
+python3 -u SPDXMerge.py --docpath=test/json/input
