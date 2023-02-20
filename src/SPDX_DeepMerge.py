@@ -29,7 +29,7 @@ class SPDX_DeepMerger():
 
     def doc_packageinfo(self):
         """
-        Append packges from document list  
+        Append packges from document list
         """
         for doc in self.doc_list:
             master_doc.packages.extend(doc.packages)

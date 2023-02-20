@@ -25,9 +25,13 @@ jobs:
 
       - name: Show help
         run: |
-          python SPDXMerge.py --help
+          python src/SPDXMerge.py --help
 
       - name: Run pylint
         run: |
           pip install -r requirements-dev.txt
-          pylint *.py
+          pylint **/*.py
+
+      - name: Run pytest 
+        run: |
+          pytest .

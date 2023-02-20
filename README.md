@@ -24,8 +24,13 @@ pip install -r requirements.txt
 Execute the command with the required inputs.
   
 ```shell
-    SPDXMerge --docpath <folder path of the SBOMs to be merged> --name <product name> --mergetype <0 for deep merge/1 for shallow merge --author <organization or author name> 
-              --email <org/ author email> --docnamespace <namespace for spdx doc> --filetype <expected SBOM file format for JSON/T for Tag value>
+    python src/SPDXMerge --docpath <folder path of the SBOMs to be merged>
+                         --name <product name>
+                         --mergetype <0 for deep merge/1 for shallow merge>
+                         --author <organization or author name>
+                         --email <org/ author email>
+                         --docnamespace <namespace for spdx doc>
+                         --filetype <expected SBOM file format for JSON/T for Tag value>
 ```
 
 ### GitHub action

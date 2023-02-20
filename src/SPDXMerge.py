@@ -2,7 +2,6 @@ import click
 from SPDXMergeLib import create_merged_spdx_document, write_file
 import utils
 
-
 @click.command()
 @click.option("--docpath", prompt="Directory path", required=True, help="Directory path with SPDX files to be merged")
 @click.option("--name", prompt="Product Name", required=True, help="Name of product for which SBoM is created")

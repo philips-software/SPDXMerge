@@ -37,6 +37,6 @@ class SPDX_ShallowMerger():
 
         master_doc.add_package(package)
         for doc in self.doc_list:
-            chek_sum = Checksum(ChecksumAlgorithm.SHA1,value=doc.comment)
-            extDoc = ExternalDocumentRef(doc.spdx_id,doc.namespace,chek_sum)
+            check_sum = Checksum(ChecksumAlgorithm.SHA1,doc.comment)
+            extDoc = ExternalDocumentRef(doc.spdx_id,doc.namespace,check_sum)
             master_doc.add_ext_document_reference(extDoc)

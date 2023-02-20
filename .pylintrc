@@ -1,13 +1,9 @@
 [MASTER]
 
 
-disable=line-too-long,invalid-name,protected-access,fixme,too-many-branches,
-        attribute-defined-outside-init,too-many-locals,
-        too-many-arguments,too-many-statements,
-        too-many-return-statements,too-few-public-methods,
-        import-error,too-many-lines,too-many-instance-attributes,
-        too-many-public-methods,duplicate-code,broad-except,
-        redefined-builtin,missing-docstring,no-member
+disable=line-too-long,missing-module-docstring,invalid-name,too-many-arguments,
+        wrong-import-order,missing-function-docstring,duplicate-code,missing-class-docstring,
+        redefined-builtin,fixme,attribute-defined-outside-init,import-error
 
 [REPORTS]
 
