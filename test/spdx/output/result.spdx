@@ -4,7 +4,7 @@ SPDXVersion: SPDX-2.3
 DataLicense: CC0-1.0
 DocumentNamespace: https://philips.example.com
 DocumentName: sample-sbom-spdx
-LicenseListVersion: 3.6
+LicenseListVersion: 3.20
 SPDXID: SPDXRef-DOCUMENT
 ExternalDocumentRef: SPDXRef-DOCUMENT https://spdx.org/510f728d-05b2-4e32-8501-550587c39a2a SHA1: afde1f15aa7df28bea3625fd1260d17a0ac1cf0c
 ExternalDocumentRef: SPDXRef-DOCUMENT https://spdx.org/510f728d-05b2-4e32-8501-550587c39a2a SHA1: afde1f15aa7df28bea3625fd1260d17a0ac1cf0c
