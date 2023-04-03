@@ -10,6 +10,7 @@ env:
   DOCKER_ORGANIZATION: philipssoftware
   GITHUB_ORGANIZATION: philips-software
   KEYLESS: true
+  VERSION: "${GITHUB_REF#refs/tags/}"
 
 jobs:
   docker-image:
@@ -24,7 +25,7 @@ jobs:
         with:
           dockerfile: ${{ matrix.dockerfile }} 
           image-name: SPDXMerge
-          tags: ${{ github.ref }}
+          tags: ${{ env.VERSION }}
           push-branches: main
           slsa-provenance: true
           sign: true
