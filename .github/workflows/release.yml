@@ -37,7 +37,7 @@ jobs:
         uses: philips-software/docker-ci-scripts@v5.1.0
         with:
           dockerfile: .
-          image-name: SPDXMerge
+          image-name: spdxmerge
           tags: ${{ needs.get-version.outputs.version }}
           push-branches: main
           slsa-provenance: true
