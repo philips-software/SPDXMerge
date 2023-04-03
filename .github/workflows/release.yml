@@ -27,6 +27,9 @@ jobs:
     needs: [get-version]
     name: Docker build from dockerfile
     runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      id-token: write
     container: python:3.10
     steps:
       - name: Checkout code
