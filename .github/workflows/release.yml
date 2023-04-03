@@ -1,0 +1,31 @@
+name: Create and publish signed docker image with SLSA provenance and SBOM
+on:
+  push:
+    tags:
+      - v[0-9]+.[0-9]+.[0-9]+*
+
+env:
+  REGISTRY_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+  REGISTRY_TOKEN: '${{ secrets.DOCKER_PASSWORD }}'
+  DOCKER_ORGANIZATION: philipssoftware
+  GITHUB_ORGANIZATION: philips-software
+  KEYLESS: true
+
+jobs:
+  docker-image:
+    name: Docker build from dockerfile
+    runs-on: ubuntu-latest
+    container: python:3.10
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 # ratchet:actions/checkout@v3
+      - name: Build docker image
+        uses: philips-software/docker-ci-scripts@v5.1.0
+        with:
+          dockerfile: ${{ matrix.dockerfile }} 
+          image-name: SPDXMerge
+          tags: ${{ github.ref }}
+          push-branches: main
+          slsa-provenance: true
+          sign: true
+          sbom: true
