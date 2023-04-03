@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.1.0](https://github.com/philips-software/SPDXMerge/compare/v0.1.0...v0.1.0) (2023-04-03)
+## [0.1.0](https://github.com/philips-software/SPDXMerge/compare/v0.1...v0.1.0) (2023-04-03)
 
 
 ### Bug Fixes
