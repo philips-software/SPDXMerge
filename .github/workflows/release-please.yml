@@ -9,9 +9,6 @@ on:
 permissions:
   contents: read
 
-concurrency:
-  group: ${{ github.ref }}-${{ github.workflow }}
-
 jobs:
   release-please:
     name: Create Release
@@ -19,4 +16,4 @@ jobs:
     steps:
       - uses: google-github-actions/release-please-action@e0b9d1885d92e9a93d5ce8656de60e3b806e542c # v3.7.5
         with:
-          command: manifest
+          release-type: python
