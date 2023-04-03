@@ -1,4 +1,4 @@
-name: Attach binaries, sbom and provenance to releases
+name: Create and publish signed docker image with SLSA provenance and SBOM
 on:
   push:
     tags:
@@ -12,7 +12,7 @@ env:
   KEYLESS: true
 
 jobs:
-  attach:
+  docker-image:
     name: Docker build from dockerfile
     runs-on: ubuntu-latest
     container: python:3.10
