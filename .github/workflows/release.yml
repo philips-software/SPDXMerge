@@ -40,6 +40,7 @@ jobs:
           image-name: spdxmerge
           tags: ${{ needs.get-version.outputs.version }}
           push-branches: main
+          push-on-git-tag: true
           slsa-provenance: true
           sign: true
           sbom: true
