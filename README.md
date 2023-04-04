@@ -52,6 +52,20 @@ Execute the command with the required inputs.
     run: cat merged-SBoM.json
 ```
 
+### Docker image
+
+```shell
+docker run -it --rm -v$(PWD):/code \
+  -e DOCPATH='/code' \
+  -e NAME='' \
+  -e MERGETYPE='' \
+  -e AUTHOR='' \
+  -e EMAIL='' \
+  -e DOCNAMESPACE='' \
+  -e FILETYPE='' \
+  docker.io/philipssoftware/spdxmerge:v0.1.0
+```
+
 ## TODOs
 
 - Option for Organization, Author tag in document creation
