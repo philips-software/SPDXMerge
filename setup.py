@@ -9,7 +9,7 @@ with open(requirements_path, "r", encoding="utf8") as f:
 
 setup(
     name='spdxmerge',
-    version='0.1.0',
+    version='0.1.7',
     description="merges content of two/more spdx sboms",
     long_description_content_type="text/markdown",
     url="https://github.com/philips-software/SPDXMerge",
@@ -20,5 +20,9 @@ setup(
         "Operating System :: OS Independent",
     ],
     install_requires=required,
-    python_requires='>=3.10.9'
+    python_requires='>=3.10.9',
+    entry_points='''
+        [console_scripts]
+        spdxmerge=src.SPDXMerge:main
+    '''
 )
