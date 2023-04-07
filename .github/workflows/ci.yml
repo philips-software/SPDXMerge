@@ -25,6 +25,9 @@ jobs:
 
       - name: Show help
         run: |
+          pwd
+          echo "path ," $PYTHONPATH
+          ls -l
           python spdxmerge/SPDXMerge.py --help
 
       - name: Run pylint
