@@ -1,6 +1,13 @@
+import os
+import sys
 import click
+
+sys.path.insert(0, "/".join(os.path.dirname(__file__).split('/')[:-1]))
+
 from spdxmerge.SPDXMergeLib import create_merged_spdx_document, write_file
 from spdxmerge.utils import read_docs
+
+
 
 @click.command()
 @click.option("--docpath", prompt="Directory path", required=True, help="Directory path with SPDX files to be merged")
