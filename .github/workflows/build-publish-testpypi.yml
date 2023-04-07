@@ -27,7 +27,7 @@ jobs:
       - name: Build a binary wheel and a source tarball
         run: >-
           python3 -m
-          build src/setup.py sdist bdist_wheel
+          build spdxmerge/setup.py sdist bdist_wheel
           --outdir dist/
           .
       - name: Publish distribution 📦 to Test PyPI

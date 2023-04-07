@@ -25,7 +25,7 @@ jobs:
 
       - name: Show help
         run: |
-          python src/SPDXMerge.py --help
+          python spdxmerge/SPDXMerge.py --help
 
       - name: Run pylint
         run: |
