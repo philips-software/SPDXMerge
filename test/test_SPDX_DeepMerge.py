@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from src.SPDX_DeepMerge import SPDX_DeepMerger
+from spdxmerge.SPDX_DeepMerge import SPDX_DeepMerger
 
 from spdx.annotation import Annotation
 from spdx.creationinfo import Person

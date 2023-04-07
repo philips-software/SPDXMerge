@@ -1,6 +1,6 @@
 import click
-from SPDXMergeLib import create_merged_spdx_document, write_file
-import utils
+from spdxmerge.SPDXMergeLib import create_merged_spdx_document, write_file
+from spdxmerge.utils import read_docs
 
 @click.command()
 @click.option("--docpath", prompt="Directory path", required=True, help="Directory path with SPDX files to be merged")
@@ -16,7 +16,7 @@ def main(docpath, name, mergetype, author, email, docnamespace, filetype):
     Shallow Merge: New SBoM is created only with external ref links to SBoM files to be merged
     Deep Merge: New SBoM file is created by appending package, relationship, license information
     """
-    doc_list = utils.read_docs(docpath)
+    doc_list = read_docs(docpath)
     merge_type = "shallow" if mergetype == '0' else "deep"
     doc = create_merged_spdx_document(doc_list, docnamespace, name, author, email, merge_type)
     write_file(doc, filetype, merge_type)
