@@ -3,7 +3,6 @@ on:
   push:
     paths:
       - .github/workflows/build-publish-testpypi.yml
-    branches: [publish-new-releases-to-pypi]
   workflow_dispatch:
 jobs:
     pypi-executable:
