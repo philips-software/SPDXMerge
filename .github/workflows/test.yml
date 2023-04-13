@@ -5,8 +5,7 @@ jobs:
   test-action:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@b56e6a3d768b11aef1d4c73977caf6413c0d74c8 # v3.2.0
-
+      - uses: actions/checkout@755da8c3cf115ac066823e79a1e1788f8940201b # ratchet:actions/checkout@v3.2.0
       - name: Test merging SPDX JSON format files
         uses: ./
         with:
@@ -17,12 +16,10 @@ jobs:
           email: "test@mail.com"
           docnamespace: "https://philips.example.com"
           filetype: "J" # J JSON, T for SPDX tag value format
-
       - name: Check result for JSON format
         run: |
           # Ignore field created since it contains a created at timestamp
           diff -I"created" merged-SBoM-deep.json ${{github.workspace}}/test/json/output/result.json
-
       - name: Test merging SPDX Tag value format files
         uses: ./
         with:
@@ -33,7 +30,6 @@ jobs:
           email: "test@mail.com"
           docnamespace: "https://philips.example.com"
           filetype: "T" # J JSON, T for SPDX tag value format
-
       - name: Check result for SPDX tag value format
         run: |
           # Ignore field created since it contains a created at timestamp

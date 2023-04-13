@@ -3,14 +3,12 @@ on:
   push:
     tags:
       - v[0-9]+.[0-9]+.[0-9]+*
-
 env:
   REGISTRY_USERNAME: ${{ secrets.DOCKER_USERNAME }}
   REGISTRY_TOKEN: '${{ secrets.DOCKER_PASSWORD }}'
   DOCKER_ORGANIZATION: philipssoftware
   GITHUB_ORGANIZATION: philips-software
   KEYLESS: true
-
 jobs:
   get-version:
     name: Get version from tag
@@ -22,7 +20,6 @@ jobs:
         id: version
         run: |
           echo "version=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
-
   docker-image:
     needs: [get-version]
     name: Docker build from dockerfile
@@ -37,7 +34,7 @@ jobs:
       - name: Show version
         run: echo ${{ needs.get-version.outputs.version }}
       - name: Build docker image
-        uses: philips-software/docker-ci-scripts@v5.1.0
+        uses: philips-software/docker-ci-scripts@d0045b844f08b0dcb4c62bd4acf6c36877404dae # ratchet:philips-software/docker-ci-scripts@v5.1.0
         with:
           dockerfile: .
           image-name: spdxmerge
