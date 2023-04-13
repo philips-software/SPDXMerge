@@ -9,7 +9,7 @@ with open(requirements_path, "r", encoding="utf8") as f:
 
 setup(
     name='spdxmerge',
-    version='0.1.23',
+    version='0.1.0',
     description="merges content of two/more spdx sboms",
     long_description_content_type="text/markdown",
     url="https://github.com/philips-software/SPDXMerge",
