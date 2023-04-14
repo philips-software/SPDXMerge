@@ -2,12 +2,12 @@ import codecs
 from spdx.writers.json import write_document as write_json_document, InvalidDocumentError as JsonInvalidDocumentError
 from spdx.writers.tagvalue import write_document as write_tagvalue_document, InvalidDocumentError as TagvalueInvalidDocumentError
 from spdx.parsers.loggers import ErrorMessages
-import SPDX_DeepMerge
-import SPDX_ShallowMerge
+from spdxmerge.SPDX_DeepMerge import SPDX_DeepMerger
+from spdxmerge.SPDX_ShallowMerge import SPDX_ShallowMerger
 
 def create_merged_spdx_document(doc_list, docnamespace, name, author, email, merge_type):
     if merge_type == "deep":
-        merger = SPDX_DeepMerge.SPDX_DeepMerger(doc_list, docnamespace, name, author, email)
+        merger = SPDX_DeepMerger(doc_list, docnamespace, name, author, email)
         merger.doc_creationinfo()
         merger.doc_packageinfo()
         merger.doc_fileinfo()
@@ -15,7 +15,7 @@ def create_merged_spdx_document(doc_list, docnamespace, name, author, email, mer
         merger.doc_other_license_info()
         merger.doc_relationship_info()
     elif merge_type == "shallow":
-        merger = SPDX_ShallowMerge.SPDX_ShallowMerger(doc_list, docnamespace, name, author, email)
+        merger = SPDX_ShallowMerger(doc_list, docnamespace, name, author, email)
         merger.doc_creationInfo()
         merger.doc_externalDocumentRef()
 

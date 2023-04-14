@@ -11,7 +11,7 @@ echo " - FILETYPE     : $FILETYPE"
 
 # TODO: add check for missing arguments
 
-python3 /app/src/SPDXMerge.py \
+python3 /app/spdxmerge/SPDXMerge.py \
     --docpath "$DOCPATH" \
     --name "$NAME" \
     --mergetype $MERGETYPE \

@@ -1,4 +1,4 @@
-from src.SPDX_ShallowMerge import SPDX_ShallowMerger
+from spdxmerge.SPDX_ShallowMerge import SPDX_ShallowMerger
 
 from spdx.creationinfo import Person
 from spdx.document import Document

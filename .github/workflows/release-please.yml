@@ -1,20 +1,16 @@
-
 name: Create Release
-
 on:
   workflow_dispatch:
   push:
     branches: [main]
-
 permissions:
   contents: read
-
 jobs:
   release-please:
     name: Create Release
     runs-on: ubuntu-latest
     steps:
-      - uses: google-github-actions/release-please-action@ee9822ec2c397e8a364d634464339ac43a06e042 # v3.7.6
+      - uses: google-github-actions/release-please-action@ee9822ec2c397e8a364d634464339ac43a06e042 # ratchet:google-github-actions/release-please-action@v3.7.6
         with:
           release-type: python
           token: ${{ secrets.SPDXMERGE_GITHUB_TOKEN }}
