@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/philips-software/SPDXMerge/compare/v0.1.0...v0.1.1) (2023-04-26)
+
+
+### Bug Fixes
+
+* Also tag the latest docker-image ([17e0deb](https://github.com/philips-software/SPDXMerge/commit/17e0deb57f14ddc30d6f57bd44ce6ecc096ac556))
+
 ## [0.1.0](https://github.com/philips-software/SPDXMerge/compare/v0.1.0...v0.1.0) (2023-04-03)
 
 
