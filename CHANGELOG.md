@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.3](https://github.com/philips-software/SPDXMerge/compare/v0.1.2...v0.1.3) (2023-04-26)
+
+
+### Bug Fixes
+
+* remove pypi test environment ([cf37e22](https://github.com/philips-software/SPDXMerge/commit/cf37e22d43a1b7a8e076138346c5446bc1cde707))
+
 ## [0.1.2](https://github.com/philips-software/SPDXMerge/compare/v0.1.1...v0.1.2) (2023-04-26)
 
 
