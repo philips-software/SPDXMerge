@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2](https://github.com/philips-software/SPDXMerge/compare/v0.1.1...v0.1.2) (2023-04-26)
+
+
+### Bug Fixes
+
+* Use Trusted Publisher ([cf7d5f6](https://github.com/philips-software/SPDXMerge/commit/cf7d5f6cdfa93295b8cd0c59acb1acfa58a8692e))
+
 ## [0.1.1](https://github.com/philips-software/SPDXMerge/compare/v0.1.0...v0.1.1) (2023-04-26)
 
 
