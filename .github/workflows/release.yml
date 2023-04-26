@@ -38,7 +38,7 @@ jobs:
         with:
           dockerfile: .
           image-name: spdxmerge
-          tags: ${{ needs.get-version.outputs.version }}
+          tags: ${{ needs.get-version.outputs.version }} latest
           push-branches: main
           push-on-git-tag: true
           slsa-provenance: true
