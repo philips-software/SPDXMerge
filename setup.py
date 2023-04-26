@@ -8,8 +8,8 @@ with open(requirements_path, "r", encoding="utf8") as f:
     required = f.read().splitlines()
 
 setup(
-    name='spdxmerge',
-    version='0.1.2',
+    name='spdx-merge',
+    version='0.1.3',
     description="merges content of two/more spdx sboms",
     long_description_content_type="text/markdown",
     url="https://github.com/philips-software/SPDXMerge",
