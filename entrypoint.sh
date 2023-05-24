@@ -2,6 +2,7 @@
 
 echo "arguments:"
 echo " - DOCPATH      : $DOCPATH"
+echo " - OUTPATH      : $OUTPATH"
 echo " - NAME         : $NAME"
 echo " - MERGETYPE    : $MERGETYPE"
 echo " - AUTHOR       : $AUTHOR"
@@ -13,6 +14,7 @@ echo " - FILETYPE     : $FILETYPE"
 
 python3 /app/spdxmerge/SPDXMerge.py \
     --docpath "$DOCPATH" \
+    --outpath "$OUTPATH" \
     --name "$NAME" \
     --mergetype $MERGETYPE \
     --author "$AUTHOR" \
