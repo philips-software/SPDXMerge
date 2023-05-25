@@ -25,7 +25,7 @@ def create_merged_spdx_document(doc_list, docnamespace, name, author, email, mer
 def write_file(doc, filetype, merge_type, outpath = None):
     result_filetype = "spdx" if filetype.lower() == "t" else "json"
     file = f"merged-SBoM-{merge_type}.{result_filetype}"
-    if(outpath):
+    if outpath:
         file = os.path.join(outpath, file)
     with codecs.open(file, mode="w", encoding="utf-8") as out:
         try:
