@@ -40,7 +40,7 @@ Execute the command with the required inputs.
   - name: Checkout project
     uses: actions/checkout@v3
   - name: Run SPDX Merge tool to merge spdx files 
-    uses: philips-software/SPDXMerge@v0.1
+    uses: philips-software/SPDXMerge@v0.2.0
     with:
       docpath: ${{github.workspace}}/Test # path with spdx files in json
       name: sample-sbom                   # name project
@@ -67,7 +67,7 @@ docker run -it --rm \
   -e EMAIL='' \
   -e DOCNAMESPACE='' \
   -e FILETYPE='' \
-  docker.io/philipssoftware/spdxmerge:v0.1.1
+  docker.io/philipssoftware/spdxmerge:v0.2.0
 ```
 
 ## TODOs
