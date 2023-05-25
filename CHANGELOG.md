@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.2.0](https://github.com/philips-software/SPDXMerge/compare/v0.1.3...v0.2.0) (2023-05-25)
+
+
+### Bug Fixes
+
+* pylint error ([5305124](https://github.com/philips-software/SPDXMerge/commit/530512479c6741f69b6e5e500f032dcdb6e40d58))
+
+
+### Documentation
+
+* update docs ([51515d6](https://github.com/philips-software/SPDXMerge/commit/51515d6cb70f286ab68d25e359a742005097292a))
+
 ## [0.1.3](https://github.com/philips-software/SPDXMerge/compare/v0.1.2...v0.1.3) (2023-04-26)
 
 
