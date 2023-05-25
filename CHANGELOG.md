@@ -2,6 +2,9 @@
 
 ## [0.2.0](https://github.com/philips-software/SPDXMerge/compare/v0.1.3...v0.2.0) (2023-05-25)
 
+### Features
+
+* Output path ([#42](https://github.com/philips-software/SPDXMerge/pull/42) - Thanks to @electricgull
 
 ### Bug Fixes
 
