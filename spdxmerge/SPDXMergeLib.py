@@ -1,4 +1,5 @@
 import codecs
+import os
 from spdx.writers.json import write_document as write_json_document, InvalidDocumentError as JsonInvalidDocumentError
 from spdx.writers.tagvalue import write_document as write_tagvalue_document, InvalidDocumentError as TagvalueInvalidDocumentError
 from spdx.parsers.loggers import ErrorMessages
@@ -21,9 +22,11 @@ def create_merged_spdx_document(doc_list, docnamespace, name, author, email, mer
 
     return merger.get_document()
 
-def write_file(doc, filetype, merge_type):
+def write_file(doc, filetype, merge_type, outpath = None):
     result_filetype = "spdx" if filetype.lower() == "t" else "json"
     file = f"merged-SBoM-{merge_type}.{result_filetype}"
+    if(outpath):
+        file = os.path.join(outpath, file)
     with codecs.open(file, mode="w", encoding="utf-8") as out:
         try:
             if result_filetype == "spdx":

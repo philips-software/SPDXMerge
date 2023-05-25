@@ -5,6 +5,9 @@ inputs:
   docpath:
     description: 'The path to the folder that contains the files to be merged'
     mandatory: true
+  outpath:
+    description: 'The path to the folder where the merged file will be saved'
+    mandatory: false
   name:
     description: "Name of product for which SBoM is created"
     mandatory: true
