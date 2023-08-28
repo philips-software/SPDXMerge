@@ -5,7 +5,7 @@ jobs:
   test-action:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # ratchet:actions/checkout@v3.5.3
+      - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # ratchet:actions/checkout@v3.6.0
       - name: Test merging SPDX JSON format files
         uses: ./
         with:
