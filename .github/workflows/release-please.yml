@@ -10,7 +10,7 @@ jobs:
     name: Create Release
     runs-on: ubuntu-latest
     steps:
-      - uses: google-github-actions/release-please-action@8016a6649226f2ec88ed05441c11bb5410a22d29 # ratchet:google-github-actions/release-please-action@v3.7.10
+      - uses: google-github-actions/release-please-action@ca6063f4ed81b55db15b8c42d1b6f7925866342d # ratchet:google-github-actions/release-please-action@v3.7.11
         with:
           release-type: python
           token: ${{ secrets.SPDXMERGE_GITHUB_TOKEN }}
