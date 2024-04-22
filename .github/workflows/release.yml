@@ -31,7 +31,7 @@ jobs:
     container: python:3.10
     steps:
       - name: Checkout code
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # ratchet:actions/checkout@v3
+        uses: actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f # ratchet:actions/checkout@v3
       - name: Show version
         run: echo ${{ needs.get-version.outputs.version }}
       - name: Build docker image
@@ -55,7 +55,7 @@ jobs:
     container: python:3.10
     steps:
       - name: Checkout code
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # ratchet:actions/checkout@v3
+        uses: actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f # ratchet:actions/checkout@v3
       - name: Install pypa/build
         run: >-
           python3 -m pip install build
