@@ -64,4 +64,4 @@ jobs:
           python -m build --sdist --wheel --outdir dist/ .
       - name: "Publish distribution \U0001F4E6 to PyPI"
         if: startsWith(github.ref, 'refs/tags')
-        uses: pypa/gh-action-pypi-publish@81e9d935c883d0b210363ab89cf05f3894778450 # ratchet:pypa/gh-action-pypi-publish@release/v1
+        uses: pypa/gh-action-pypi-publish@ec4db0b4ddc65acdf4bff5fa45ac92d78b56bdf0 # ratchet:pypa/gh-action-pypi-publish@release/v1
