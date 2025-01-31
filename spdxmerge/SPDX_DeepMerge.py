@@ -51,7 +51,7 @@ class SPDX_DeepMerger():
             # Add 'DESCRIBES' relationship between master and child documents, then import all relationships in child docs
             relationship = Relationship(master_doc.spdx_id+" "+RelationshipType.DESCRIBES.name+" "+doc.spdx_id)
             master_doc.add_relationship(relationship)
-            master_doc.relationships.extend(doc.relationships)
+            #master_doc.relationships.extend(doc.relationships)
 
     def doc_annotation_info(self):
         for doc in self.doc_list:
