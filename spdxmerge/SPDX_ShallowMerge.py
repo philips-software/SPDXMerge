@@ -1,10 +1,14 @@
-from spdx.checksum import Checksum,ChecksumAlgorithm
-from spdx.utils import NoAssert
-from spdx.creationinfo import Person
-from spdx.license import License
-from spdx.document import (Document,ExternalDocumentRef)
-from spdx.package import Package
-from spdx.version import Version
+from spdx_tools.spdx.model import (
+    Checksum,
+    ChecksumAlgorithm,
+    Actor,
+    Document,
+    ExternalDocumentRef,
+    Package,
+    Version,
+    SpdxNoAssertion
+)
+from spdx_tools.common.spdx_licensing import spdx_licensing
 
 master_doc = Document()
 
@@ -33,7 +37,7 @@ class SPDX_ShallowMerger():
         package.name = self.name
         package.version = "1.0"
         package.spdx_id = self.docnamespace + "#SPDXRef-DOCUMENT"
-        package.download_location = NoAssert()
+        package.download_location = SpdxNoAssertion()
 
         master_doc.add_package(package)
         for doc in self.doc_list:
