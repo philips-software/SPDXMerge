@@ -35,7 +35,7 @@ class SPDX_DeepMerger():
 
     def doc_packageinfo(self):
         """
-        Append packges from document list
+        Append packages from document list
         """
         for doc in self.doc_list:
             self.master_doc.packages += doc.packages
@@ -49,8 +49,17 @@ class SPDX_DeepMerger():
             self.master_doc.snippets += doc.snippets
 
     def doc_other_license_info(self):
+        """
+        Append unique licenses to hasExtractedLicensingInfo
+        """
+        master_doc_eli_ids = []
         for doc in self.doc_list:
-            self.master_doc.extracted_licensing_info += doc.extracted_licensing_info
+            doc_eli = [
+                eli for eli in doc.extracted_licensing_info
+                if eli.license_id not in master_doc_eli_ids
+            ]
+            master_doc_eli_ids += [eli.license_id for eli in doc_eli]
+            self.master_doc.extracted_licensing_info += doc_eli
 
     def doc_relationship_info(self):
         for doc in self.doc_list:
