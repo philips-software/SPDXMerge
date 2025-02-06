@@ -61,8 +61,9 @@ class SPDX_DeepMerger():
                 relationship_type=RelationshipType.DESCRIBES,
                 related_spdx_element_id=doc.creation_info.spdx_id
             )
-            doc.relationships += [relationship]
+            #doc.relationships += [relationship]
             #self.master_doc.relationships += doc.relationships
+            self.master_doc.relationships += [relationship]
 
     def doc_annotation_info(self):
         for doc in self.doc_list:
