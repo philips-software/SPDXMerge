@@ -15,7 +15,7 @@ python3 /app/spdxmerge/SPDXMerge.py \
     --docpath "$DOCPATH" \
     --outpath "$OUTPATH" \
     --name "$NAME" \
-    --name "$VERSION" \
+    --version "$VERSION" \
     --mergetype $MERGETYPE \
     --author "$AUTHOR" \
     --email "$EMAIL" \
