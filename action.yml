@@ -11,6 +11,9 @@ inputs:
   name:
     description: "Name of product for which SBoM is created"
     mandatory: true
+  version:
+    description: "Version of product for which SBoM is created"
+    mandatory: true
   mergetype:
     description: "Type of merge: 0 for shallow merge, 1 for deep merge"
     mandatory: false
@@ -33,6 +36,7 @@ runs:
   env:
     DOCPATH: ${{ inputs.docpath }}
     NAME: ${{ inputs.name }}
+    VERSION: ${{ inputs.version }}
     MERGETYPE: ${{ inputs.mergetype }}
     AUTHOR: ${{ inputs.author }}
     EMAIL: ${{ inputs.email }}

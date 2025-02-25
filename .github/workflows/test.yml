@@ -11,6 +11,7 @@ jobs:
         with:
           docpath: ${{github.workspace}}/test/json/input
           name: sample-sbom-json
+          version: "1"
           mergetype: "1" # 0 shallow merge, 1 deep merge 
           author: "ci/cd build pipeline"
           email: "test@mail.com"
@@ -25,6 +26,7 @@ jobs:
         with:
           docpath: ${{github.workspace}}/test/spdx/input
           name: sample-sbom-spdx
+          version: "1"
           mergetype: "0" # 0 shallow merge, 1 deep merge 
           author: "ci/cd build pipeline"
           email: "test@mail.com"
