@@ -32,7 +32,6 @@ def write_file(doc, filetype, merge_type, outpath=None):
     
     try:
         if result_filetype == "spdx":
-            # Change this line - provide a file path instead of an open file
             write_tagvalue_document(doc, file)
         else:
             write_json_document(doc, file_path=file, validate=True)
