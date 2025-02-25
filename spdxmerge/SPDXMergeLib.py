@@ -34,7 +34,7 @@ def write_file(doc, filetype, merge_type, outpath=None):
         if result_filetype == "spdx":
             write_tagvalue_document(doc, file)
         else:
-            write_json_document(doc, file_path=file, validate=True)
+            write_json_document(doc, file, validate=True)
     except Exception as e:
         print("Document is Invalid:", end="")
         print((e.args[0]))
