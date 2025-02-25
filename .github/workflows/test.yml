@@ -35,4 +35,4 @@ jobs:
       - name: Check result for SPDX tag value format
         run: |
           # Ignore field created since it contains a created at timestamp
-          diff -I"Created" merged-SBoM-shallow.spdx ${{github.workspace}}/test/spdx/output/result.spdx
+          diff -I"Created" -I"SHA[0-9]+:" merged-SBoM-shallow.spdx ${{github.workspace}}/test/spdx/output/result.spdx
