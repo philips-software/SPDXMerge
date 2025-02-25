@@ -1,324 +1,158 @@
-{	
-    "SPDXID": "SPDXRef-DOCUMENT",    
-	"spdxVersion": "SPDX-2.2",
-    "creationInfo": {
-        "created": "2022-11-02T10:30:22Z",
-		"licenseListVersion": "3.13",		
-        "creators": ["Organization: Philips"]
+{
+  "SPDXID" : "SPDXRef-DOCUMENT",
+  "spdxVersion" : "SPDX-2.3",
+  "creationInfo" : {
+    "created" : "2022-10-23T15:44:16Z",
+    "creators" : [ "Person: Gary O'Neall", "Tool: spdx-maven-plugin" ],
+    "licenseListVersion" : "3.18"
+  },
+  "name" : "examplemaven",
+  "dataLicense" : "CC0-1.0",
+  "documentDescribes" : [ "SPDXRef-example" ],
+  "documentNamespace" : "http://spdx.org/documents/examplemaven-0.0.1",
+  "packages" : [ {
+    "SPDXID" : "SPDXRef-junit",
+    "copyrightText" : "UNSPECIFIED",
+    "description" : "JUnit is a regression testing framework written by Erich Gamma and Kent Beck. It is used by the developer who implements unit tests in Java.",
+    "downloadLocation" : "NOASSERTION",
+    "filesAnalyzed" : false,
+    "homepage" : "http://junit.org",
+    "licenseConcluded" : "NOASSERTION",
+    "licenseDeclared" : "CPL-1.0",
+    "name" : "JUnit",
+    "originator" : "Organization: JUnit",
+    "summary" : "JUnit is a regression testing framework written by Erich Gamma and Kent Beck. It is used by the developer who implements unit tests in Java.",
+    "versionInfo" : "3.8.1"
+  }, {
+    "SPDXID" : "SPDXRef-log4jslf4jbinding",
+    "copyrightText" : "UNSPECIFIED",
+    "description" : "The Apache Log4j SLF4J API binding to Log4j 2 Core",
+    "downloadLocation" : "NOASSERTION",
+    "filesAnalyzed" : false,
+    "licenseConcluded" : "NOASSERTION",
+    "licenseDeclared" : "NOASSERTION",
+    "name" : "Apache Log4j SLF4J Binding",
+    "summary" : "The Apache Log4j SLF4J API binding to Log4j 2 Core"
+  }, {
+    "SPDXID" : "SPDXRef-log4jslf4jApi",
+    "copyrightText" : "UNSPECIFIED",
+    "description" : "The slf4j API",
+    "downloadLocation" : "NOASSERTION",
+    "filesAnalyzed" : false,
+    "homepage" : "http://www.slf4j.org",
+    "licenseConcluded" : "NOASSERTION",
+    "licenseDeclared" : "NOASSERTION",
+    "name" : "SLF4J API Module",
+    "summary" : "The slf4j API"
+  }, {
+    "SPDXID" : "SPDXRef-log4jApi",
+    "copyrightText" : "UNSPECIFIED",
+    "description" : "The Apache Log4j API",
+    "downloadLocation" : "NOASSERTION",
+    "filesAnalyzed" : false,
+    "licenseConcluded" : "NOASSERTION",
+    "licenseDeclared" : "NOASSERTION",
+    "name" : "Apache Log4j API",
+    "summary" : "The Apache Log4j API"
+  }, {
+    "SPDXID" : "SPDXRef-log4jImpl",
+    "copyrightText" : "UNSPECIFIED",
+    "description" : "The Apache Log4j Implementation",
+    "downloadLocation" : "NOASSERTION",
+    "filesAnalyzed" : false,
+    "licenseConcluded" : "NOASSERTION",
+    "licenseDeclared" : "NOASSERTION",
+    "name" : "Apache Log4j Core",
+    "summary" : "The Apache Log4j Implementation"
+  }, {
+    "SPDXID" : "SPDXRef-example",
+    "checksums" : [ {
+      "algorithm" : "SHA1",
+      "checksumValue" : "b8a7e6c75001e6d78625cfc9a3103bf121abf8b4"
+    } ],
+    "copyrightText" : "Copyright (c) 2022 Source Auditor Inc.",
+    "description" : "This is a simple example Maven project created using the Maven quickstart archetype with one dependency added.",
+    "downloadLocation" : "NOASSERTION",
+    "filesAnalyzed" : true,
+    "homepage" : "https://github.com/spdx/spdx-examples",
+    "licenseConcluded" : "Apache-2.0",
+    "licenseDeclared" : "Apache-2.0",
+    "licenseInfoFromFiles" : [ "Apache-2.0" ],
+    "name" : "examplemaven",
+    "originator" : "Organization: Linux Foundation",
+    "packageFileName" : "examplemaven-0.0.1.jar",
+    "packageVerificationCode" : {
+      "packageVerificationCodeValue" : "c12417def36d7804096521de4280721e5863e68b"
     },
-	"documentDescribes": [
-        "SPDXRef-package-42dd561c-5275-4869-a66f-998e987327d7"
-    ],
-    "name": "AltaTrack Equipment",
-    "dataLicense": "CC0-1.0",    
-    "documentNamespace": "https://spdx.philips.com/spdx/Airtrack1.2-42dd561c-5275-4869-a66f-998e987327d7", 
-    "packages": [
-		 {
-            "SPDXID": "SPDXRef-package-42dd561c-5275-4869-a66f-998e987327d7",
-            "copyrightText": "NOASSERTION",
-            "description": "NOASSERTION",
-            "downloadLocation": "NOASSERTION",
-            "filesAnalyzed": false,
-            "homepage": "NOASSERTION",
-            "licenseConcluded": "LicenseRef-Commercial-6903e358-d1d3-4a75-b64f-c713e9144c63",
-            "licenseDeclared": "NOASSERTION",
-            "name": "AltaTrack",
-            "supplier": "Organization: Philips",
-            "versionInfo": "1.2.0"
-        },
-        {
-            "SPDXID": "SPDXRef-package-d1d0a05e-088a-429d-9901-baee35b17b24",
-            "copyrightText": "NOASSERTION",
-            "description": "NOASSERTION",
-            "downloadLocation": "NOASSERTION",
-            "filesAnalyzed": false,
-            "homepage": "NOASSERTION",
-            "licenseConcluded": "LicenseRef-Commercial-6903e358-d1d3-4a75-b64f-c713e9144c63",
-            "licenseDeclared": "NOASSERTION",
-            "name": "Windows Embedded Standard 7 SP1",
-            "supplier": "Organization: Microsoft",
-            "versionInfo": "6.1.7601"
-        },
-        {
-            "SPDXID": "SPDXRef-package-0d9a5af1-1663-479e-9fdc-4fa5d3f0025e",
-            "copyrightText": "NOASSERTION",
-            "description": "NOASSERTION",
-            "downloadLocation": "NOASSERTION",
-            "filesAnalyzed": false,
-            "homepage": "NOASSERTION",
-            "licenseConcluded": "LicenseRef-Commercial-6903e358-d1d3-4a75-b64f-c713e9144c63",
-            "licenseDeclared": "NOASSERTION",
-            "name": ".NET Framework 4.6.2",
-            "supplier": "Organization: Microsoft",
-            "versionInfo": "4.6.01590"
-        },
-        {
-            "SPDXID": "SPDXRef-package-536ce4ee-0b57-4282-8f56-ad11955e277c",
-            "copyrightText": "NOASSERTION",
-            "description": "NOASSERTION",
-            "downloadLocation": "NOASSERTION",
-            "filesAnalyzed": false,
-            "homepage": "NOASSERTION",
-            "licenseConcluded": "LicenseRef-Commercial-6903e358-d1d3-4a75-b64f-c713e9144c63",
-            "licenseDeclared": "NOASSERTION",
-            "name": "Visual Studio C++ 2015 Runtime Libraries",
-            "supplier": "Organization: Microsoft",
-            "versionInfo": "14.0.24212"
-        },
-        {
-            "SPDXID": "SPDXRef-package-19f87b4c-080d-4fa9-bb3c-d3f28045dcdd",
-            "copyrightText": "NOASSERTION",
-            "description": "NOASSERTION",
-            "downloadLocation": "NOASSERTION",
-            "filesAnalyzed": false,
-            "homepage": "NOASSERTION",
-            "licenseConcluded": "LicenseRef-Commercial-6903e358-d1d3-4a75-b64f-c713e9144c63",
-            "licenseDeclared": "NOASSERTION",
-            "name": "IPP 7",
-            "supplier": "Organization: Intel",
-            "versionInfo": "7.0.205"
-        },
-        {
-            "SPDXID": "SPDXRef-package-4b8e8004-07d0-47a4-99bd-4208385d2fbf",
-            "copyrightText": "NOASSERTION",
-            "description": "NOASSERTION",
-            "downloadLocation": "NOASSERTION",
-            "filesAnalyzed": false,
-            "homepage": "NOASSERTION",
-            "licenseConcluded": "LicenseRef-PhilipsProprietary-8663A847-2230-4D98-A7CC-10B4B1DC380A",
-            "licenseDeclared": "NOASSERTION",
-            "name": "Vessel and Table Segmentation algorithm",
-            "supplier": "Organization: Philips",
-            "versionInfo": "1.0.0.11"
-        },
-        {
-            "SPDXID": "SPDXRef-package-78a6b64e-57b6-4728-93e0-4a793497137b",
-            "copyrightText": "NOASSERTION",
-            "description": "NOASSERTION",
-            "downloadLocation": "NOASSERTION",
-            "filesAnalyzed": false,
-            "homepage": "NOASSERTION",
-            "licenseConcluded": "LicenseRef-PhilipsProprietary-8663A847-2230-4D98-A7CC-10B4B1DC380A",
-            "licenseDeclared": "NOASSERTION",
-            "name": "Bone Segmentation algorithm",
-            "supplier": "Organization: Philips",
-            "versionInfo": "1.0.0.11"
-        },
-        {
-            "SPDXID": "SPDXRef-package-d816ca2d-e043-4016-9cbe-ef1d7c32d610",
-            "copyrightText": "NOASSERTION",
-            "description": "NOASSERTION",
-            "downloadLocation": "NOASSERTION",
-            "filesAnalyzed": false,
-            "homepage": "NOASSERTION",
-            "licenseConcluded": "LicenseRef-PhilipsProprietary-8663A847-2230-4D98-A7CC-10B4B1DC380A",
-            "licenseDeclared": "NOASSERTION",
-            "name": "Interventional Workspot",
-            "supplier": "Organization: Philips",
-            "versionInfo": "1.5.0"
-        },
-        {
-            "SPDXID": "SPDXRef-package-10e2bc4e-d68f-48ad-b7c0-0f8224a1d8e3",
-            "copyrightText": "NOASSERTION",
-            "description": "NOASSERTION",
-            "downloadLocation": "NOASSERTION",
-            "filesAnalyzed": false,
-            "homepage": "NOASSERTION",
-            "licenseConcluded": "LicenseRef-Commercial-6903e358-d1d3-4a75-b64f-c713e9144c63",
-            "licenseDeclared": "NOASSERTION",
-            "name": "Windows 10 IoT Enterprise 2016 LTSB",
-            "supplier": "Organization: Microsoft",
-            "versionInfo": "N.A."
-        },
-        {
-            "SPDXID": "SPDXRef-package-0240227a-996a-4b38-b8d1-3fb2b7fb7e2a",
-            "copyrightText": "NOASSERTION",
-            "description": "NOASSERTION",
-            "downloadLocation": "NOASSERTION",
-            "filesAnalyzed": false,
-            "homepage": "NOASSERTION",
-            "licenseConcluded": "LicenseRef-Commercial-6903e358-d1d3-4a75-b64f-c713e9144c63",
-            "licenseDeclared": "NOASSERTION",
-            "name": "Visual Studio C++ 2010 Runtime Libraries SP1",
-            "supplier": "Organization: Microsoft",
-            "versionInfo": "10.0.40219.325"
-        },
-        {
-            "SPDXID": "SPDXRef-package-af9823fd-3e45-40e1-953c-0d33369aad32",
-            "copyrightText": "NOASSERTION",
-            "description": "NOASSERTION",
-            "downloadLocation": "NOASSERTION",
-            "filesAnalyzed": false,
-            "homepage": "NOASSERTION",
-            "licenseConcluded": "LicenseRef-Commercial-6903e358-d1d3-4a75-b64f-c713e9144c63",
-            "licenseDeclared": "NOASSERTION",
-            "name": "CP210 Runtime Libraries",
-            "supplier": "Organization: Silicon Labs",
-            "versionInfo": "3.4.0"
-        },
-        {
-            "SPDXID": "SPDXRef-package-fba3fb85-4b1a-4991-984d-9ef56306c063",
-            "copyrightText": "NOASSERTION",
-            "description": "NOASSERTION",
-            "downloadLocation": "NOASSERTION",
-            "filesAnalyzed": false,
-            "homepage": "NOASSERTION",
-            "licenseConcluded": "LicenseRef-Commercial-6903e358-d1d3-4a75-b64f-c713e9144c63",
-            "licenseDeclared": "NOASSERTION",
-            "name": "4FM Library",
-            "supplier": "Organization: 4DSP",
-            "versionInfo": "1.52.101 / 1.52.103"
-        },
-        {
-            "SPDXID": "SPDXRef-package-95882f7d-88bb-4249-8cac-4aaf7f31b684",
-            "copyrightText": "NOASSERTION",
-            "description": "NOASSERTION",
-            "downloadLocation": "NOASSERTION",
-            "filesAnalyzed": false,
-            "homepage": "NOASSERTION",
-            "licenseConcluded": "LicenseRef-Commercial-6903e358-d1d3-4a75-b64f-c713e9144c63",
-            "licenseDeclared": "NOASSERTION",
-            "name": "4FM Driver",
-            "supplier": "Organization: 4DSP",
-            "versionInfo": "6.1.7600.16385"
-        },
-        {
-            "SPDXID": "SPDXRef-package-1c97ed53-e96c-4a57-a3cb-0a8fe7f9ce01",
-            "copyrightText": "NOASSERTION",
-            "description": "NOASSERTION",
-            "downloadLocation": "NOASSERTION",
-            "filesAnalyzed": false,
-            "homepage": "NOASSERTION",
-            "licenseConcluded": "LicenseRef-Commercial-6903e358-d1d3-4a75-b64f-c713e9144c63",
-            "licenseDeclared": "NOASSERTION",
-            "name": "Visual Studio C++ 2012 Update 4 Runtime Libraries",
-            "supplier": "Organization: Microsoft",
-            "versionInfo": "11.0.61030"
-        },
-        {
-            "SPDXID": "SPDXRef-package-6b47d485-5f26-49d0-9b5e-d6630e3a2271",
-            "copyrightText": "NOASSERTION",
-            "description": "NOASSERTION",
-            "downloadLocation": "NOASSERTION",
-            "filesAnalyzed": false,
-            "homepage": "NOASSERTION",
-            "licenseConcluded": "LicenseRef-Commercial-6903e358-d1d3-4a75-b64f-c713e9144c63",
-            "licenseDeclared": "NOASSERTION",
-            "name": "CUDA Runtime and FFT Library",
-            "supplier": "Organization: Nvidia",
-            "versionInfo": "6.5.14"
-        },
-        {
-            "SPDXID": "SPDXRef-package-aa38760e-09c8-4726-abca-d2ae5708f988",
-            "copyrightText": "NOASSERTION",
-            "description": "NOASSERTION",
-            "downloadLocation": "NOASSERTION",
-            "filesAnalyzed": false,
-            "homepage": "NOASSERTION",
-            "licenseConcluded": "LicenseRef-Commercial-6903e358-d1d3-4a75-b64f-c713e9144c63",
-            "licenseDeclared": "NOASSERTION",
-            "name": "Nvidia Driver",
-            "supplier": "Organization: Nvidia",
-            "versionInfo": "341.16"
-        }        
-    ],
-	"relationships": [
-		{
-			"relationshipType": "DEPENDS_ON",
-			"spdxElementId": "SPDXRef-package-42dd561c-5275-4869-a66f-998e987327d7",
-			"relatedSpdxElement": "SPDXRef-package-d1d0a05e-088a-429d-9901-baee35b17b24"
-		},
-		{
-			"relationshipType": "DEPENDS_ON",
-			"spdxElementId": "SPDXRef-package-42dd561c-5275-4869-a66f-998e987327d7",
-			"relatedSpdxElement": "SPDXRef-package-d1d0a05e-088a-429d-9901-baee35b17b24"
-		},
-		{
-			"relationshipType": "DEPENDS_ON",
-			"spdxElementId": "SPDXRef-package-42dd561c-5275-4869-a66f-998e987327d7",
-			"relatedSpdxElement": "SPDXRef-package-0d9a5af1-1663-479e-9fdc-4fa5d3f0025e"
-		},		
-		{
-			"relationshipType": "DEPENDS_ON",
-			"spdxElementId": "SPDXRef-package-42dd561c-5275-4869-a66f-998e987327d7",
-			"relatedSpdxElement": "SPDXRef-package-536ce4ee-0b57-4282-8f56-ad11955e277c"
-		},
-		{
-			"relationshipType": "DEPENDS_ON",
-			"spdxElementId": "SPDXRef-package-42dd561c-5275-4869-a66f-998e987327d7",
-			"relatedSpdxElement": "SPDXRef-package-19f87b4c-080d-4fa9-bb3c-d3f28045dcdd"
-		},
-		{
-			"relationshipType": "DEPENDS_ON",
-			"spdxElementId": "SPDXRef-package-42dd561c-5275-4869-a66f-998e987327d7",
-			"relatedSpdxElement": "SPDXRef-package-4b8e8004-07d0-47a4-99bd-4208385d2fbf"
-		},
-		{
-			"relationshipType": "DEPENDS_ON",
-			"spdxElementId": "SPDXRef-package-42dd561c-5275-4869-a66f-998e987327d7",
-			"relatedSpdxElement": "SPDXRef-package-78a6b64e-57b6-4728-93e0-4a793497137b"
-		},
-		{
-			"relationshipType": "DEPENDS_ON",
-			"spdxElementId": "SPDXRef-package-42dd561c-5275-4869-a66f-998e987327d7",
-			"relatedSpdxElement": "SPDXRef-package-d816ca2d-e043-4016-9cbe-ef1d7c32d610"
-		},
-		{
-			"relationshipType": "DEPENDS_ON",
-			"spdxElementId": "SPDXRef-package-42dd561c-5275-4869-a66f-998e987327d7",
-			"relatedSpdxElement": "SPDXRef-package-10e2bc4e-d68f-48ad-b7c0-0f8224a1d8e3"
-		},
-		{
-			"relationshipType": "DEPENDS_ON",
-			"spdxElementId": "SPDXRef-package-42dd561c-5275-4869-a66f-998e987327d7",
-			"relatedSpdxElement": "SPDXRef-package-0240227a-996a-4b38-b8d1-3fb2b7fb7e2a"
-		},
-		{
-			"relationshipType": "DEPENDS_ON",
-			"spdxElementId": "SPDXRef-package-42dd561c-5275-4869-a66f-998e987327d7",
-			"relatedSpdxElement": "SPDXRef-package-af9823fd-3e45-40e1-953c-0d33369aad32"
-		},
-		{
-			"relationshipType": "DEPENDS_ON",
-			"spdxElementId": "SPDXRef-package-42dd561c-5275-4869-a66f-998e987327d7",
-			"relatedSpdxElement": "SPDXRef-package-fba3fb85-4b1a-4991-984d-9ef56306c063"
-		},
-		{
-			"relationshipType": "DEPENDS_ON",
-			"spdxElementId": "SPDXRef-package-42dd561c-5275-4869-a66f-998e987327d7",
-			"relatedSpdxElement": "SPDXRef-package-95882f7d-88bb-4249-8cac-4aaf7f31b684"
-		},
-		{
-			"relationshipType": "DEPENDS_ON",
-			"spdxElementId": "SPDXRef-package-42dd561c-5275-4869-a66f-998e987327d7",
-			"relatedSpdxElement": "SPDXRef-package-95882f7d-88bb-4249-8cac-4aaf7f31b684"
-		},
-		{
-			"relationshipType": "DEPENDS_ON",
-			"spdxElementId": "SPDXRef-package-42dd561c-5275-4869-a66f-998e987327d7",
-			"relatedSpdxElement": "SPDXRef-package-1c97ed53-e96c-4a57-a3cb-0a8fe7f9ce01"
-		},
-		{
-			"relationshipType": "DEPENDS_ON",
-			"spdxElementId": "SPDXRef-package-42dd561c-5275-4869-a66f-998e987327d7",
-			"relatedSpdxElement": "SPDXRef-package-6b47d485-5f26-49d0-9b5e-d6630e3a2271"
-		},
-		{
-			"relationshipType": "DEPENDS_ON",
-			"spdxElementId": "SPDXRef-package-42dd561c-5275-4869-a66f-998e987327d7",
-			"relatedSpdxElement": "SPDXRef-package-aa38760e-09c8-4726-abca-d2ae5708f988"
-		}		
-	],	
-    "hasExtractedLicensingInfos": [
-        {
-            "name": "Philips Proprietary License",
-            "licenseId": "LicenseRef-PhilipsProprietary-8663A847-2230-4D98-A7CC-10B4B1DC380A",
-            "extractedText": "This is sample text"
-        },
-		{
-            "name": "Commercial",
-            "licenseId": "LicenseRef-Commercial-6903e358-d1d3-4a75-b64f-c713e9144c63",
-            "extractedText": "This is sample text"
-        }
-		]
+    "primaryPackagePurpose" : "LIBRARY",
+    "hasFiles" : [ "SPDXRef-appsource", "SPDXRef-apptest" ],
+    "summary" : "This is a simple example Maven project created using the Maven quickstart archetype with one dependency added.",
+    "supplier" : "Organization: SPDX",
+    "versionInfo" : "0.0.1"
+  } ],
+  "files" : [ {
+    "SPDXID" : "SPDXRef-appsource",
+    "checksums" : [ {
+      "algorithm" : "SHA1",
+      "checksumValue" : "a6f47dbc7e4615058490055172fe0065c55f8fc5"
+    } ],
+    "copyrightText" : "Copyright (c) 2020 Source Auditor Inc.",
+    "fileContributors" : [ "Gary O'Neall" ],
+    "fileName" : "./src/main/java/org/spdx/examplemaven/App.java",
+    "fileTypes" : [ "SOURCE" ],
+    "licenseComments" : "This file contains SPDX-License-Identifiers for Apache-2.0",
+    "licenseConcluded" : "Apache-2.0",
+    "licenseInfoInFiles" : [ "Apache-2.0" ],
+    "noticeText" : "SPDX-License-Identifier: Apache-2.0\nCopyright (c) 2022 Source Auditor Inc."
+  }, {
+    "SPDXID" : "SPDXRef-apptest",
+    "checksums" : [ {
+      "algorithm" : "SHA1",
+      "checksumValue" : "4b4df52d36588c8e9482d56eebc42336447f3dad"
+    } ],
+    "copyrightText" : "Copyright (c) 2020 Source Auditor Inc.",
+    "fileContributors" : [ "Gary O'Neall" ],
+    "fileName" : "./src/test/java/org/spdx/examplemaven/AppTest.java",
+    "fileTypes" : [ "SOURCE" ],
+    "licenseComments" : "This file contains SPDX-License-Identifiers for Apache-2.0",
+    "licenseConcluded" : "Apache-2.0",
+    "licenseInfoInFiles" : [ "Apache-2.0" ],
+    "noticeText" : "SPDX-License-Identifier: Apache-2.0\nCopyright (c) 2022 Source Auditor Inc."
+  } ],
+  "relationships" : [ {
+    "spdxElementId" : "SPDXRef-junit",
+    "relationshipType" : "TEST_DEPENDENCY_OF",
+    "relatedSpdxElement" : "SPDXRef-example",
+    "comment" : "Relationship created based on Maven POM information"
+  }, {
+    "spdxElementId" : "SPDXRef-example",
+    "relationshipType" : "DYNAMIC_LINK",
+    "relatedSpdxElement" : "SPDXRef-log4jslf4jbinding",
+    "comment" : "Relationship based on Maven POM file dependency information"
+  }, {
+    "spdxElementId" : "SPDXRef-example",
+    "relationshipType" : "DYNAMIC_LINK",
+    "relatedSpdxElement" : "SPDXRef-log4jslf4jApi",
+    "comment" : "Relationship based on Maven POM file dependency information"
+  }, {
+    "spdxElementId" : "SPDXRef-example",
+    "relationshipType" : "DYNAMIC_LINK",
+    "relatedSpdxElement" : "SPDXRef-log4jApi",
+    "comment" : "Relationship based on Maven POM file dependency information"
+  }, {
+    "spdxElementId" : "SPDXRef-example",
+    "relationshipType" : "DYNAMIC_LINK",
+    "relatedSpdxElement" : "SPDXRef-log4jImpl",
+    "comment" : "Relationship based on Maven POM file dependency information"
+  }, {
+    "spdxElementId" : "SPDXRef-appsource",
+    "relationshipType" : "GENERATES",
+    "relatedSpdxElement" : "SPDXRef-example",
+    "comment" : ""
+  }, {
+    "spdxElementId" : "SPDXRef-apptest",
+    "relationshipType" : "TEST_CASE_OF",
+    "relatedSpdxElement" : "SPDXRef-example",
+    "comment" : ""
+  } ]
 }
