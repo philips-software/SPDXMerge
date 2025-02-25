@@ -1,46 +1,55 @@
+from datetime import datetime
 from spdx_tools.spdx.model import (
     Checksum,
     ChecksumAlgorithm,
     Actor,
+    ActorType,
     Document,
     ExternalDocumentRef,
     Package,
-    Version,
-    SpdxNoAssertion
+    SpdxNoAssertion,
+    CreationInfo
 )
-from spdx_tools.common.spdx_licensing import spdx_licensing
-
-master_doc = Document()
 
 class SPDX_ShallowMerger():
-    def __init__(self,doc_list=None,docnamespace=None,name=None,author=None,email=None):
+    def __init__(self,
+                 doc_list=None,
+                 docnamespace=None,
+                 name=None,
+                 version=None,
+                 author=None,
+                 email=None):
         self.doc_list = doc_list
-        self.docnamespace = docnamespace
-        self.name = name
-        self.author = author
-        self.emailaddr = email
+        self.version = version
+        # data_license is "CC0-1.0" by default
+        self.master_doc = Document(CreationInfo(
+            spdx_version="SPDX-2.3",
+            spdx_id="SPDXRef-DOCUMENT",
+            name=name,
+            document_namespace=docnamespace,
+            creators=[Actor(
+                actor_type=ActorType.ORGANIZATION,
+                name=author,
+                email=email
+            )],
+            created=datetime.utcnow().replace(microsecond=0)
+        ))
 
     def get_document(self):
-        return master_doc
-
-    def doc_creationInfo(self):
-        master_doc.name = self.name
-        master_doc.version = Version(2,3) # TODO Need to check from where to take this. can not hardcode here
-        master_doc.spdx_id = self.docnamespace + "#SPDXRef-DOCUMENT"
-        master_doc.namespace = self.docnamespace
-        master_doc.data_license = License.from_identifier("CC0-1.0") #TODO Can not hardcode it here need to check from where to take it.
-        master_doc.creation_info.add_creator(Person(self.author,self.emailaddr))
-        master_doc.creation_info.set_created_now()
+        return self.master_doc
 
     def doc_externalDocumentRef(self):
-        package = Package()
-        package.name = self.name
-        package.version = "1.0"
-        package.spdx_id = self.docnamespace + "#SPDXRef-DOCUMENT"
-        package.download_location = SpdxNoAssertion()
+        package = Package(
+            name=self.master_doc.creation_info.name,
+            version=self.version,
+            spdx_id="SPDXRef-" + str(0),
+            download_location=SpdxNoAssertion()
+        )
 
-        master_doc.add_package(package)
+        self.master_doc.packages.append(package)
+
         for doc in self.doc_list:
-            check_sum = Checksum(ChecksumAlgorithm.SHA1,doc.comment)
-            extDoc = ExternalDocumentRef(doc.spdx_id,doc.namespace,check_sum)
-            master_doc.add_ext_document_reference(extDoc)
+            check_sum = Checksum(ChecksumAlgorithm.SHA1, doc.comment)
+            doc_ref_id = "DocumentRef-" + doc.creation_info.spdx_id #is this how we want it?
+            extDoc = ExternalDocumentRef(doc_ref_id, doc.creation_info.document_namespace, check_sum)
+            self.master_doc.creation_info.external_document_refs.append(extDoc)
