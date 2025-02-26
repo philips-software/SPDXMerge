@@ -17,10 +17,10 @@ jobs:
           email: "test@mail.com"
           docnamespace: "https://philips.example.com"
           filetype: "J" # J JSON, T for SPDX tag value format
-      # - name: Check result for JSON format
-      #   run: |
-      #     # Ignore field created since it contains a created at timestamp
-      #     diff -I"created" merged-SBoM-deep.json ${{github.workspace}}/test/json/output/result.json
+      - name: Check result for JSON format
+        run: |
+          # Ignore field created since it contains a created at timestamp
+          diff -I"creationInfo" merged-SBoM-deep.json ${{github.workspace}}/test/json/output/result.json
       - name: Test merging SPDX Tag value format files
         uses: ./
         with:
