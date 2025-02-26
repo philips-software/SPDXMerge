@@ -253,12 +253,12 @@ def test_spdx_document_validation():
         author="Yazat Mishra",
         email="yazat@example.com",
     )
-    merged_doc = merger.get_document()
     merger.doc_packageinfo()
     merger.doc_fileinfo()
     merger.doc_snippetinfo()
     merger.doc_other_license_info()
     merger.doc_relationship_info()
+    merged_doc = merger.get_document()
     validation_errors = validate_full_spdx_document(merged_doc)
 
     assert len(validation_errors) == 0  # Ensure document is valid SPDX
