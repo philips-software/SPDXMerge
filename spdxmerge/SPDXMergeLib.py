@@ -1,11 +1,9 @@
 import os
-import codecs
+from spdxmerge.SPDX_DeepMerge import SPDX_DeepMerger
+from spdxmerge.SPDX_ShallowMerge import SPDX_ShallowMerger
 from spdx_tools.spdx.writer.json.json_writer import (
     write_document_to_file as write_json_document,
 )
-from spdxmerge.SPDX_DeepMerge import SPDX_DeepMerger
-from spdxmerge.SPDX_ShallowMerge import SPDX_ShallowMerger
-
 from spdx_tools.spdx.writer.tagvalue.tagvalue_writer import (
     write_document_to_file as write_tagvalue_document
 )
@@ -29,15 +27,12 @@ def write_file(doc, filetype, merge_type, outpath=None):
     file = f"merged-SBoM-{merge_type}.{result_filetype}"
     if outpath:
         file = os.path.join(outpath, file)
-    
     try:
         if result_filetype == "spdx":
             write_tagvalue_document(doc, file)
         else:
             write_json_document(doc, file, validate=True)
-    except Exception as e:
+    except (ValueError) as e:
         print("Document is Invalid:", end="")
         print((e.args[0]))
-    
     print("File "+file+" is generated")
-
