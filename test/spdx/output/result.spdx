@@ -6,8 +6,8 @@ DocumentName: sample-sbom-spdx
 DocumentNamespace: https://philips.example.com
 
 ## External Document References
-ExternalDocumentRef: DocumentRef-SPDXRef-DOCUMENT https://spdx.org/510f728d-05b2-4e32-8501-550587c39a2a SHA1: e5fce1ce201550b7830bbcb49aafb0e5fce8fba4
-ExternalDocumentRef: DocumentRef-SPDXRef-DOCUMENT https://spdx.org/510f728d-05b2-4e32-8501-550587c39a2a SHA1: 1ced9cdc3ce00126ac4bb8ea902719ede9e1f9c8
+ExternalDocumentRef: DocumentRef-SPDXRef-DOCUMENT https://spdx.org/510f728d-05b2-4e32-8501-550587c39a2a SHA1: 2bda6fc16f7e9428ad775e313ea4ac33cf4e4bfe
+ExternalDocumentRef: DocumentRef-SPDXRef-DOCUMENT https://spdx.org/510f728d-05b2-4e32-8501-550587c39a2a SHA1: b993cf2e89576a0d60e4ecb2a21fa1f1f72cdf94
 
 ## Creation Information
 Creator: Organization: ci/cd build pipeline (test@mail.com)
