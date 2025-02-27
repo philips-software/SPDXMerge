@@ -1,4 +1,5 @@
 import os
+import json
 from spdxmerge.SPDX_DeepMerge import SPDX_DeepMerger
 from spdxmerge.SPDX_ShallowMerge import SPDX_ShallowMerger
 from spdx_tools.spdx.writer.json.json_writer import (
@@ -32,6 +33,9 @@ def write_file(doc, filetype, merge_type, outpath=None):
             write_tagvalue_document(doc, file)
         else:
             write_json_document(doc, file, validate=True)
+            with open(file, 'r', encoding='utf-8') as f:
+                json_content = json.load(f)
+                print(json.dumps(json_content, indent=2))
     except (ValueError) as e:
         print("Document is Invalid:", end="")
         print((e.args[0]))
