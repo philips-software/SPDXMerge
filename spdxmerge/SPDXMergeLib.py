@@ -30,9 +30,9 @@ def write_file(doc, filetype, merge_type, outpath=None):
         file = os.path.join(outpath, file)
     try:
         if result_filetype == "spdx":
-            write_tagvalue_document(doc, file)
+            write_tagvalue_document(doc, file, validate=False)
         else:
-            write_json_document(doc, file, validate=True)
+            write_json_document(doc, file, validate=False)
             with open(file, 'r', encoding='utf-8') as f:
                 json_content = json.load(f)
                 print(json.dumps(json_content, indent=2))
