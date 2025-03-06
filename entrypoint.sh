@@ -22,4 +22,4 @@ python3 /app/spdxmerge/SPDXMerge.py \
     --email "$EMAIL" \
     --docnamespace "$DOCNAMESPACE" \
     --filetype "$FILETYPE" \
-    --rootdocpath "ROOTPATH"
+    --rootdocpath "$ROOTPATH"
