@@ -46,8 +46,7 @@ class SPDX_DeepMerger:
         """
         Append packages from document list
         """
-
-        if (self.root_doc is None):
+        if self.root_doc is None:
             Main_Package = Package(
                 name=self.master_doc.creation_info.name,
                 version=self.version,
@@ -56,7 +55,6 @@ class SPDX_DeepMerger:
             )
 
             self.master_doc.packages.append(Main_Package)
-            
         for doc in self.doc_list:
             self.master_doc.packages += doc.packages
 
@@ -83,16 +81,15 @@ class SPDX_DeepMerger:
             self.master_doc.extracted_licensing_info += doc_eli
 
     def doc_relationship_info(self):
-        if (self.root_doc is None):
+        if self.root_doc is None:
             Main_Package = self.master_doc.packages[0]
-            
             # The document should DESCRIBE the root package with name as input name and version as input version
             relationship = Relationship(
                 spdx_element_id=self.master_doc.creation_info.spdx_id,
                 relationship_type=RelationshipType.DESCRIBES,
                 related_spdx_element_id=Main_Package.spdx_id,
             )
-            
+
         else:
             found = False
             # Find the SPDX element ID with the DESCRIBES relationship
@@ -101,7 +98,7 @@ class SPDX_DeepMerger:
                     related_spdx_element_id = rel.related_spdx_element_id
                     found = True
                     break
-            
+
             # If no DESCRIBES relationship is found, raise an error
             if not found:
                 raise ValueError("Root document has no relationship of type DESCRIBES")
