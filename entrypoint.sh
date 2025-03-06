@@ -9,6 +9,7 @@ echo " - AUTHOR       : $AUTHOR"
 echo " - EMAIL        : $EMAIL"
 echo " - DOCNAMESPACE : $DOCNAMESPACE"
 echo " - FILETYPE     : $FILETYPE"
+echo " - ROOTPATH     : $ROOTPATH"
 
 # TODO: add check for missing arguments
 python3 /app/spdxmerge/SPDXMerge.py \
@@ -20,4 +21,5 @@ python3 /app/spdxmerge/SPDXMerge.py \
     --author "$AUTHOR" \
     --email "$EMAIL" \
     --docnamespace "$DOCNAMESPACE" \
-    --filetype "$FILETYPE"
+    --filetype "$FILETYPE" \
+    --rootdocpath "ROOTPATH"
