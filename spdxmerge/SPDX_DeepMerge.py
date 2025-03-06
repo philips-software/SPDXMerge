@@ -95,12 +95,14 @@ class SPDX_DeepMerger:
             
         else:
             found = False
+            # Find the SPDX element ID with the DESCRIBES relationship
             for rel in self.root_doc.relationships:
                 if rel.relationship_type == RelationshipType.DESCRIBES:
                     related_spdx_element_id = rel.related_spdx_element_id
                     found = True
                     break
             
+            # If no DESCRIBES relationship is found, raise an error
             if not found:
                 raise ValueError("Root document has no relationship of type DESCRIBES")
 

@@ -34,6 +34,7 @@ Execute the command with the required inputs:
                          --email <org/author email>
                          --docnamespace <namespace for SPDX document>
                          --filetype <expected SBOM file format for JSON/T for Tag value>
+                         --rootdocpath <expects SBOM file in the docpath that should act as the root doc> (optional)
 ```  
 
 ### 🔹 **New Update: Version Input**  
