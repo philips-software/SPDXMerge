@@ -20,9 +20,11 @@ class SPDX_DeepMerger:
         version=None,
         author=None,
         email=None,
+        root_doc=None,
     ):
         self.doc_list = doc_list
         self.version = version
+        self.root_doc = root_doc
         # data_license is "CC0-1.0" by default
         self.master_doc = Document(
             CreationInfo(
@@ -45,14 +47,16 @@ class SPDX_DeepMerger:
         Append packages from document list
         """
 
-        Main_Package = Package(
-            name=self.master_doc.creation_info.name,
-            version=self.version,
-            spdx_id="SPDXRef-" + str(0),
-            download_location=SpdxNoAssertion(),
-        )
+        if (self.root_doc is None):
+            Main_Package = Package(
+                name=self.master_doc.creation_info.name,
+                version=self.version,
+                spdx_id="SPDXRef-" + str(0),
+                download_location=SpdxNoAssertion(),
+            )
 
-        self.master_doc.packages.append(Main_Package)
+            self.master_doc.packages.append(Main_Package)
+            
         for doc in self.doc_list:
             self.master_doc.packages += doc.packages
 
@@ -79,14 +83,32 @@ class SPDX_DeepMerger:
             self.master_doc.extracted_licensing_info += doc_eli
 
     def doc_relationship_info(self):
-        Main_Package = self.master_doc.packages[0]
+        if (self.root_doc is None):
+            Main_Package = self.master_doc.packages[0]
+            
+            # The document should DESCRIBE the root package with name as input name and version as input version
+            relationship = Relationship(
+                spdx_element_id=self.master_doc.creation_info.spdx_id,
+                relationship_type=RelationshipType.DESCRIBES,
+                related_spdx_element_id=Main_Package.spdx_id,
+            )
+            
+        else:
+            found = False
+            for rel in self.root_doc.relationships:
+                if rel.relationship_type == RelationshipType.DESCRIBES:
+                    related_spdx_element_id = rel.related_spdx_element_id
+                    found = True
+                    break
+            
+            if not found:
+                raise ValueError("Root document has no relationship of type DESCRIBES")
 
-        # The document should DESCRIBE the root package with name as input name and version as input version
-        relationship = Relationship(
-            spdx_element_id=self.master_doc.creation_info.spdx_id,
-            relationship_type=RelationshipType.DESCRIBES,
-            related_spdx_element_id=Main_Package.spdx_id,
-        )
+            relationship = Relationship(
+                spdx_element_id=self.master_doc.creation_info.spdx_id,
+                relationship_type=RelationshipType.DESCRIBES,
+                related_spdx_element_id=related_spdx_element_id,
+            )
 
         self.master_doc.relationships.append(relationship)
 

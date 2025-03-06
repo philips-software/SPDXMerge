@@ -29,14 +29,17 @@ from spdxmerge.utils import read_docs
 @click.option("--filetype", prompt="SBoM output file type SPDX tag value format - T or JSON - J",
               help="Enter T for SPDX tag value format, J for JSON",
               type=click.Choice(['T', 't', 'J', 'j']), default='J')
-def main(docpath, name, version, mergetype, author, email, docnamespace, filetype, outpath=None):
+@click.option("--rootdocpath", prompt="SBoM root author", required=False, prompt_required=False,
+              default="",
+              help="SBoM that should be used as root author")
+def main(docpath, name, version, mergetype, author, email, docnamespace, filetype, rootdocpath, outpath=None):
     """Tool provides option to merge SPDX SBoM files. Provides two options for merging,
     Shallow Merge: New SBoM is created only with external ref links to SBoM files to be merged
     Deep Merge: New SBoM file is created by appending package, relationship, license information
     """
-    doc_list = read_docs(docpath)
+    doc_list, root_doc = read_docs(docpath, rootdocpath)
     merge_type = "shallow" if mergetype == '0' else "deep"
-    doc = create_merged_spdx_document(doc_list, docnamespace, name, version, author, email, merge_type)
+    doc = create_merged_spdx_document(doc_list, docnamespace, name, version, author, email, merge_type, root_doc)
     write_file(doc, filetype, merge_type, outpath)
 
 

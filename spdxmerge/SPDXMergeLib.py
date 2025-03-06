@@ -9,9 +9,9 @@ from spdx_tools.spdx.writer.tagvalue.tagvalue_writer import (
     write_document_to_file as write_tagvalue_document
 )
 
-def create_merged_spdx_document(doc_list, docnamespace, name, version, author, email, merge_type):
+def create_merged_spdx_document(doc_list, docnamespace, name, version, author, email, merge_type, root_doc):
     if merge_type == "deep":
-        merger = SPDX_DeepMerger(doc_list, docnamespace, name, version, author, email)
+        merger = SPDX_DeepMerger(doc_list, docnamespace, name, version, author, email, root_doc)
         merger.doc_packageinfo()
         merger.doc_fileinfo()
         merger.doc_snippetinfo()
