@@ -32,8 +32,8 @@ from spdxmerge.utils import read_docs
 @click.option("--rootdocpath", prompt="SBoM root author", required=False, prompt_required=False,
               default="",
               help="SBoM that should be used as root author")
-def main(docpath, name, version, mergetype, author, email, docnamespace, filetype, rootdocpath, outpath=None):
-    """Tool provides option to merge SPDX SBoM files. Provides two options for merging,
+def main(docpath, name, version, mergetype, author, email, docnamespace, filetype, rootdocpath=None, outpath=None):
+    """Tool provides option to merge SPDX SBoM files. Provides two options for merging, 
     Shallow Merge: New SBoM is created only with external ref links to SBoM files to be merged
     Deep Merge: New SBoM file is created by appending package, relationship, license information
     """

@@ -36,11 +36,30 @@ Execute the command with the required inputs:
                          --filetype <expected SBOM file format for JSON/T for Tag value>
                          --rootdocpath <expects SBOM file in the docpath that should act as the root doc> (optional)
 ```  
+---
 
 ### 🔹 **New Update: Version Input**  
 To establish a unique **"DESCRIBES"** relationship in the SPDX document, a **root package** must be created.  
 For this, we now require both **name** and **version** as input parameters.  
 
+---
+
+### 🔹 **New Update: Roothpath input**  
+To establish a unique **"DESCRIBES"** relationship in the SPDX document, a **root document** can be specified.  
+For this, we now introduce the **`--rootdocpath`** option to define the root document, ensuring proper validation and relationship mapping.
+
+#### Options
+- `--rootdocpath` (optional): Specifies the root SBoM document.
+
+#### Implementation Details
+- The tool scans the root document for a `DESCRIBES` relationship.
+- If found, the related SPDX element ID is used to establish the relationship.
+- If no such relationship is found, an error is raised.
+- The relationship is added to the master document.
+
+#### Error Handling
+- Raises an error if `--rootdocpath` is defined but the file is not found in the path.
+- Raises an error if the root document lacks a `DESCRIBES` relationship.
 ---
 
 ### GitHub Action  
@@ -80,6 +99,7 @@ docker run -it --rm \
   -e EMAIL='' \
   -e DOCNAMESPACE='' \
   -e FILETYPE='' \
+  -e ROOTPATH='' \
   docker.io/philipssoftware/spdxmerge:v0.2.0
 ```  
 
