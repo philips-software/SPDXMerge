@@ -29,11 +29,11 @@ Execute the command with the required inputs:
                          --outpath <folder path where the merged file will be saved> (optional)
                          --name <product name>
                          --version <product version>
-                         --mergetype <0 for deep merge/1 for shallow merge>
+                         --mergetype <1 for deep merge/0 for shallow merge>
                          --author <organization or author name>
                          --email <org/author email>
                          --docnamespace <namespace for SPDX document>
-                         --filetype <expected SBOM file format for JSON/T for Tag value>
+                         --filetype <expected SBOM file format: J for JSON, T for Tag value>
                          --rootdocpath <expects SBOM file in the docpath that should act as the root doc> (optional)
 ```  
 ---
