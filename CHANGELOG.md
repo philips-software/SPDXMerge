@@ -1,5 +1,26 @@
 # Changelog
 
+## [0.2.1](https://github.com/philips-software/SPDXMerge/compare/v0.2.0...v0.2.1) (2025-04-22)
+
+
+### Bug Fixes
+
+* add output results file ([3ecf7ec](https://github.com/philips-software/SPDXMerge/commit/3ecf7ec06a41525a8a2982b4ef8d6782fd33b9d6))
+* add rootdocpath input to Docker ([4fa15ee](https://github.com/philips-software/SPDXMerge/commit/4fa15ee8af535cce34f820ce06665c63f2abfeb3))
+* add version input ([f61fd4b](https://github.com/philips-software/SPDXMerge/commit/f61fd4bd51d331bbbbb4568eb27391fdd1fe274f))
+* comment diff ([dd6925c](https://github.com/philips-software/SPDXMerge/commit/dd6925c5a55d5c2fa440810acc486250dd411b22))
+* echo output ([bfad6b8](https://github.com/philips-software/SPDXMerge/commit/bfad6b8378ac0eb88aa723f7a3a44808a46dd4e1))
+* entrypoint ([f491788](https://github.com/philips-software/SPDXMerge/commit/f491788c936ec185a3323dca7309a8a5fad644a0))
+* get_document() position ([85d1d51](https://github.com/philips-software/SPDXMerge/commit/85d1d51bbaf3120cad477064655d94584dfdde41))
+* incorrect file_path argument ([1bcbd78](https://github.com/philips-software/SPDXMerge/commit/1bcbd78494d6bc10649f99bec4243df43c268b56))
+* pylint issues ([4d45d2c](https://github.com/philips-software/SPDXMerge/commit/4d45d2cd45de750614510ee7713cc4019488aae7))
+* remove echo ([ab3150a](https://github.com/philips-software/SPDXMerge/commit/ab3150a539344f6dff11868987b2f3592f66f926))
+* remove verify flag ([3501479](https://github.com/philips-software/SPDXMerge/commit/3501479ca1cd1f0a1100377dd0553d56e94da043))
+* replace duplicate spdx files ([5f457ad](https://github.com/philips-software/SPDXMerge/commit/5f457adcd065a7734121d5f6e666f37cf7d96f21))
+* test.yml to not check SHA values ([12d94cb](https://github.com/philips-software/SPDXMerge/commit/12d94cbc8230f70af714a5ec60da36d665c8436a))
+* uncomment diff ([d58153d](https://github.com/philips-software/SPDXMerge/commit/d58153d96e173c510c3d16554f9843128b018bac))
+* update SHA values ([a0ed20a](https://github.com/philips-software/SPDXMerge/commit/a0ed20ae1222b8b3ccb668e2f20380fda907bfda))
+
 ## [0.2.0](https://github.com/philips-software/SPDXMerge/compare/v0.1.3...v0.2.0) (2023-05-25)
 
 ### Features
