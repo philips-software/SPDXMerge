@@ -12,7 +12,7 @@ packaging==24.2
 platformdirs==4.3.6
 pluggy==1.5.0
 ply==3.11
-pylint==3.1.0
+pylint==3.3.9
 pyparsing==3.2.1
 pytest==8.1.1
 PyYAML==6.0.2
