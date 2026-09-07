@@ -56,6 +56,14 @@ class SPDX_DeepMerger:
 
             self.master_doc.packages.append(Main_Package)
         for doc in self.doc_list:
+            source_file_name = getattr(doc, "source_file_name", doc.creation_info.name)
+            for package in doc.packages:
+                source_comment = f"Source SBOM file: {source_file_name}"
+                package.comment = (
+                    f"{package.comment}\n{source_comment}"
+                    if package.comment
+                    else source_comment
+                )
             self.master_doc.packages += doc.packages
 
     def doc_fileinfo(self):

@@ -22,6 +22,7 @@ def read_docs(dir, root_doc_path=None):
         doc = parse_anything.parse_file(dir + "/" + file)
         check_sum = sha1sum(dir + "/" + file)
         doc.comment = check_sum
+        doc.source_file_name = file
         doc_list.append(doc)
 
     return doc_list, root_doc

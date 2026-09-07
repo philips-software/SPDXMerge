@@ -1,3 +1,4 @@
+import json
 from datetime import datetime
 from spdx_tools.spdx.model import (
     Document,
@@ -12,6 +13,7 @@ from spdx_tools.spdx.model import (
     AnnotationType,
 )
 from spdx_tools.spdx.validation.document_validator import validate_full_spdx_document
+from spdx_tools.spdx.writer.json.json_writer import write_document_to_file
 from spdxmerge.SPDX_DeepMerge import SPDX_DeepMerger
 
 
@@ -262,3 +264,52 @@ def test_spdx_document_validation():
     validation_errors = validate_full_spdx_document(merged_doc)
 
     assert len(validation_errors) == 0  # Ensure document is valid SPDX
+
+
+def test_merged_json_includes_source_file_identifiers(tmp_path):
+    source_documents = []
+    for source_index in range(11):
+        source_document = Document(
+            CreationInfo(
+                spdx_version="SPDX-2.3",
+                spdx_id=f"SPDXRef-DOCUMENT{source_index}",
+                name=f"Source Document {source_index}",
+                document_namespace=f"https://example.com/source-{source_index}",
+                creators=[Actor(name="Test Author", actor_type=ActorType.ORGANIZATION)],
+                created=datetime.utcnow().replace(microsecond=0),
+            )
+        )
+        source_document.source_file_name = f"source-{source_index}.json"
+        source_document.packages.append(
+            Package(
+                name=f"Package {source_index}",
+                spdx_id=f"SPDXRef-PACKAGE{source_index}",
+                download_location=SpdxNoAssertion(),
+            )
+        )
+        source_documents.append(source_document)
+
+    merger = SPDX_DeepMerger(
+        doc_list=source_documents,
+        docnamespace="https://example.com/merged",
+        name="Merged Document",
+        version="1.0",
+        author="Test Author",
+        email="test@example.com",
+    )
+    merger.doc_packageinfo()
+    merger.doc_relationship_info()
+    merged_doc = merger.get_document()
+    output_path = tmp_path / "merged.json"
+
+    write_document_to_file(merged_doc, str(output_path), validate=False)
+
+    with output_path.open(encoding="utf-8") as output_file:
+        merged_json = json.load(output_file)
+
+    assert len(validate_full_spdx_document(merged_doc)) == 0
+    assert "comment" not in merged_json
+    assert [package["comment"] for package in merged_json["packages"][1:]] == [
+        f"Source SBOM file: source-{source_index}.json"
+        for source_index in range(11)
+    ]
