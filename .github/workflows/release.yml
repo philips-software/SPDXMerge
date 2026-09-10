@@ -35,7 +35,7 @@ jobs:
       - name: Show version
         run: echo ${{ needs.get-version.outputs.version }}
       - name: Build docker image
-        uses: philips-software/docker-ci-scripts@d0045b844f08b0dcb4c62bd4acf6c36877404dae # ratchet:philips-software/docker-ci-scripts@v5.1.0
+        uses: philips-software/docker-ci-scripts@548508e51f0308bde0ed83396312de36638e409c # ratchet:philips-software/docker-ci-scripts@v6.0.0
         with:
           dockerfile: .
           image-name: spdxmerge
