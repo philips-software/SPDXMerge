@@ -52,9 +52,10 @@ class SPDX_ShallowMerger():
         #     doc_ref_id = "DocumentRef-" + doc.creation_info.spdx_id #is this how we want it?
         #     extDoc = ExternalDocumentRef(doc_ref_id, doc.creation_info.document_namespace, check_sum)
         #     self.master_doc.creation_info.external_document_refs.append(extDoc)
-        for doc in self.doc_list:
+        for index, doc in enumerate(self.doc_list):
             print(doc.comment)
             check_sum = Checksum(ChecksumAlgorithm.SHA1, doc.comment)
-            doc_ref_id = "DocumentRef-" + doc.creation_info.spdx_id
+            # Input documents share SPDXRef-DOCUMENT; references must be unique here.
+            doc_ref_id = f"DocumentRef-{index}"
             extDoc = ExternalDocumentRef(doc_ref_id, doc.creation_info.document_namespace, check_sum)
             self.master_doc.creation_info.external_document_refs.append(extDoc)

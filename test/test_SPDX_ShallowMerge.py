@@ -11,9 +11,9 @@ class Test_SPDX_ShallowMerger:
         # Create test documents with comments for checksums
         creation_info1 = CreationInfo(
             spdx_version="SPDX-2.3",
-            spdx_id="DOCUMENT1",  # Changed to match expected format
+            spdx_id="SPDXRef-DOCUMENT",
             name="Test document 1",
-            document_namespace="http://example.com/spdx",
+            document_namespace="http://example.com/spdx/first",
             creators=[Actor(ActorType.PERSON, "John Smith", "john@example.com")],
             created=datetime.utcnow().replace(microsecond=0),
         )
@@ -22,9 +22,9 @@ class Test_SPDX_ShallowMerger:
 
         creation_info2 = CreationInfo(
             spdx_version="SPDX-2.3",
-            spdx_id="DOCUMENT2",  # Changed to match expected format
+            spdx_id="SPDXRef-DOCUMENT",
             name="Test document 2",
-            document_namespace="http://example.com/spdx",
+            document_namespace="http://example.com/spdx/second",
             creators=[Actor(ActorType.PERSON, "John Smith", "john@example.com")],
             created=datetime.utcnow().replace(microsecond=0),
         )
@@ -65,14 +65,15 @@ class Test_SPDX_ShallowMerger:
         assert package.spdx_id == "SPDXRef-0"  # Fixed to match implementation
         assert isinstance(package.download_location, SpdxNoAssertion)
         assert len(doc.creation_info.external_document_refs) == 2
+        assert len({ref.document_ref_id for ref in doc.creation_info.external_document_refs}) == 2
 
         # Check external document references
-        assert doc.creation_info.external_document_refs[0].document_ref_id == "DocumentRef-DOCUMENT1"  # Fixed prefix
-        assert doc.creation_info.external_document_refs[0].document_uri == "http://example.com/spdx"
+        assert doc.creation_info.external_document_refs[0].document_ref_id == "DocumentRef-0"
+        assert doc.creation_info.external_document_refs[0].document_uri == "http://example.com/spdx/first"
         assert doc.creation_info.external_document_refs[0].checksum.algorithm == ChecksumAlgorithm.SHA1
         assert doc.creation_info.external_document_refs[0].checksum.value == "comment1"
 
-        assert doc.creation_info.external_document_refs[1].document_ref_id == "DocumentRef-DOCUMENT2"  # Fixed prefix
-        assert doc.creation_info.external_document_refs[1].document_uri == "http://example.com/spdx"
+        assert doc.creation_info.external_document_refs[1].document_ref_id == "DocumentRef-1"
+        assert doc.creation_info.external_document_refs[1].document_uri == "http://example.com/spdx/second"
         assert doc.creation_info.external_document_refs[1].checksum.algorithm == ChecksumAlgorithm.SHA1
         assert doc.creation_info.external_document_refs[1].checksum.value == "comment2"
