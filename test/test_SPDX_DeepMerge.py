@@ -15,6 +15,7 @@ from spdx_tools.spdx.model import (
 from spdx_tools.spdx.validation.document_validator import validate_full_spdx_document
 from spdx_tools.spdx.writer.json.json_writer import write_document_to_file
 from spdxmerge.SPDX_DeepMerge import SPDX_DeepMerger
+from spdxmerge.SPDXMergeLib import create_merged_spdx_document
 
 
 def test_document_creation():
@@ -222,6 +223,13 @@ def test_annotations():
     assert merged_doc.annotations[0].annotation_comment == "Test annotation 1"
     assert merged_doc.annotations[1].annotation_comment == "Test annotation 2"
     assert len(merged_doc.annotations) == 2
+
+    # The CLI uses this entry point, which must also preserve review annotations.
+    merged_doc = create_merged_spdx_document(
+        [doc1, doc2], "https://example.com/spdx", "Merged Document", "1.0",
+        "Yazat Mishra", "yazat@example.com", "deep", None,
+    )
+    assert merged_doc.annotations == [annotation1, annotation2]
 
 
 def test_spdx_document_validation():

@@ -17,6 +17,7 @@ def create_merged_spdx_document(doc_list, docnamespace, name, version, author, e
         merger.doc_snippetinfo()
         merger.doc_other_license_info()
         merger.doc_relationship_info()
+        merger.doc_annotation_info()
     elif merge_type == "shallow":
         merger = SPDX_ShallowMerger(doc_list, docnamespace, name, version, author, email)
         merger.doc_externalDocumentRef()
